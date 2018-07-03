@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="dist/style.css">
+    
+</head>
+<body>
+    <!-- <div class="main">
+        <div class="container">
+            <div class="menu">
+                <ul class="menu-block menu_left">
+                    <li class="menu_left-item">пакетные туры</li>
+                    <li class="menu_left-item">экскурсионные туры</li>
+                    <li class="menu_left-item">билеты</li>
+                    <li class="menu_left-item">отели</li>
+                </ul>
+                <ul class="menu-block menu_right">
+                    <li class="menu_left-item"><i class="fas fa-heart"></i>избранные туры</li>
+                    <li class="menu_left-item">вход</li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="main">
+        <div class="container">
+            <header>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#"><div class="nav_item">пакетные туры</div></a></li>
+                        <li class="active"><a href="#"><div class="nav_item">экскурсионные туры</div></a></li>
+                        <li><a href="#"><div class="nav_item">билеты</div></a></li>
+                        <li><a href="#"><div class="nav_item">отели</div></a>
+                            <!-- <div class="nav_item-down">
+                                <ul>
+                                    <li><a href="#">3 ***</a></li>
+                                    <li><a href="#">4 ****</a></li>
+                                    <li><a href="#">5 *****</a></li>
+                                    <li><a href="#">без звезд</a></li>
+                            </div> -->
+                        </li>   
+                    </ul>
+                    <ul>
+                        <li><a href="#"><div class="nav_item nav_item-mylist"><i class="fas fa-heart"></i>избранные туры</div></a></li>
+                        <li><a href="#"><div class="nav_item nav_item-enter">вход</div></a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="excursion">
+                <div class="excursion_where">
+                    <p>Куда</p>
+                    <form autocomplete="off" action="/action_page.php">
+                      <div class="autocomplete">
+                        <input id="myInput" type="text" name="myCountry" placeholder="Country">
+                      </div>
+                      <!-- <input type="submit"> -->
+                    </form>
+                </div>
+                <div class="excursion_whence">
+                        <p>Откуда</p>
+                        <form autocomplete="off" action="/action_page.php">
+                          <div class="autocomplete">
+                            <input id="myInput1" type="text" name="myCountry" placeholder="City">
+                          </div>
+                          <!-- <input type="submit"> -->
+                        </form>
+                    </div>
+
+            </section>
+        </div>
+    </div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
