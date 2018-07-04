@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="css/font-awesome.css">-->
+    <!--<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono" rel="stylesheet">
-    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" id='stylesheet' href="dist/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
     
 </head>
 <body>
@@ -33,53 +35,144 @@
     </div> -->
 
     <div class="main">
-        <div class="container">
-            <header>
+        <div class="container" id="container">
+            <header class="header">
                 <nav class="nav">
-                    <ul>
+                    <div class="nav-mobile"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a></div>
+                    <ul class="nav-left" id="myLinks">
                         <li><a href="#"><div class="nav_item">пакетные туры</div></a></li>
                         <li class="active"><a href="#"><div class="nav_item">экскурсионные туры</div></a></li>
                         <li><a href="#"><div class="nav_item">билеты</div></a></li>
                         <li><a href="#"><div class="nav_item">отели</div></a>
-                            <!-- <div class="nav_item-down">
-                                <ul>
-                                    <li><a href="#">3 ***</a></li>
-                                    <li><a href="#">4 ****</a></li>
-                                    <li><a href="#">5 *****</a></li>
-                                    <li><a href="#">без звезд</a></li>
-                            </div> -->
+                            <!--<div class="nav_item-down">-->
+                                <!--<ul>-->
+                                    <!--<li><a href="#">3 ***</a></li>-->
+                                    <!--<li><a href="#">4 ****</a></li>-->
+                                    <!--<li><a href="#">5 *****</a></li>-->
+                                    <!--<li><a href="#">без звезд</a></li>-->
+                            <!--</div>-->
                         </li>   
                     </ul>
-                    <ul>
-                        <li><a href="#"><div class="nav_item nav_item-mylist"><i class="fas fa-heart"></i>избранные туры</div></a></li>
-                        <li><a href="#"><div class="nav_item nav_item-enter">вход</div></a></li>
+                    <ul class="nav-right">
+                        <li><a href="#"><div class="nav_item nav_item-mylist"><i class="fas fa-heart"></i><p>избранные туры</p></div></a></li>
+                        <li><a href="#"><div class="nav_item nav_item-mylist"><i class="fas fa-sign-in-alt"></i><p>вход</p></div></a></li>
                     </ul>
                 </nav>
             </header>
             <section class="excursion">
-                <div class="excursion_where">
-                    <p>Куда</p>
-                    <form autocomplete="off" action="/action_page.php">
-                      <div class="autocomplete">
-                        <input id="myInput" type="text" name="myCountry" placeholder="Country">
-                      </div>
-                      <!-- <input type="submit"> -->
-                    </form>
-                </div>
-                <div class="excursion_whence">
-                        <p>Откуда</p>
+                <div class="excursion-left">
+                    <div class="excursion-left_where">
+                        <p>Куда</p>
                         <form autocomplete="off" action="/action_page.php">
-                          <div class="autocomplete">
-                            <input id="myInput1" type="text" name="myCountry" placeholder="City">
-                          </div>
-                          <!-- <input type="submit"> -->
+                            <div class="autocomplete">
+                                <input id="myInput" type="text" name="myCountry" placeholder="Country">
+                            </div>
+                            <!-- <input type="submit"> -->
                         </form>
                     </div>
-
+                    <div class="wrap-range">
+                        <div class="excursion-left_range">
+                            <p>Даты</p>
+                            <input id="date_range" readonly>
+                        </div>
+                        <div class="excursion-left_travel">
+                            <p>Проезд</p>
+                            <select name="travel" id="travel">
+                                <option value="1">Включен</option>
+                                <option value="2">Отключен</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="excursion-right">
+                    <div class="excursion-right_whence">
+                        <p>Откуда</p>
+                        <form autocomplete="off" action="/action_page.php">
+                            <div class="autocomplete">
+                                <input id="myInput1" type="text" name="myCountry" placeholder="City">
+                            </div>
+                            <!-- <input type="submit"> -->
+                        </form>
+                    </div>
+                    <button type="button" class="excursion-right_btn">Поиск</button>
+                </div>
             </section>
         </div>
+
+        <!--<div class="container container-1">-->
+            <!--<header>-->
+                <!--<nav class="nav">-->
+                    <!--<div class="nav-mobile"><a href="javascript:void(0);" class="icon" onclick="myFunction1()">-->
+                        <!--<i class="fa fa-bars"></i>-->
+                    <!--</a></div>-->
+                    <!--<ul class="nav-left" id="myLinks1">-->
+                        <!--<li><a href="#"><div class="nav_item">пакетные туры</div></a></li>-->
+                        <!--<li class="active"><a href="#"><div class="nav_item">экскурсионные туры</div></a></li>-->
+                        <!--<li><a href="#"><div class="nav_item">билеты</div></a></li>-->
+                        <!--<li><a href="#"><div class="nav_item">отели</div></a>-->
+                            <!--&lt;!&ndash; <div class="nav_item-down">-->
+                                <!--<ul>-->
+                                    <!--<li><a href="#">3 ***</a></li>-->
+                                    <!--<li><a href="#">4 ****</a></li>-->
+                                    <!--<li><a href="#">5 *****</a></li>-->
+                                    <!--<li><a href="#">без звезд</a></li>-->
+                            <!--</div> &ndash;&gt;-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="nav-right">-->
+                        <!--<li><a href="#"><div class="nav_item nav_item-mylist"><i class="fas fa-heart"></i><p>избранные туры</p></div></a></li>-->
+                        <!--<li><a href="#"><div class="nav_item nav_item-mylist"><i class="fas fa-sign-in-alt"></i><p>вход</p></div></a></li>-->
+                    <!--</ul>-->
+                <!--</nav>-->
+            <!--</header>-->
+            <!--<section class="excursion">-->
+                <!--<div class="excursion-left">-->
+                    <!--<div class="excursion-left_where">-->
+                        <!--<p>Куда</p>-->
+                        <!--<form autocomplete="off" action="/action_page.php">-->
+                            <!--<div class="autocomplete">-->
+                                <!--<input id="myInput" type="text" name="myCountry" placeholder="Country">-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; <input type="submit"> &ndash;&gt;-->
+                        <!--</form>-->
+                    <!--</div>-->
+                    <!--<div class="wrap-range">-->
+                        <!--<div class="excursion-left_range">-->
+                            <!--<p>Даты</p>-->
+                            <!--<input id="date_range" readonly>-->
+                        <!--</div>-->
+                        <!--<div class="excursion-left_travel">-->
+                            <!--<p>Проезд</p>-->
+                            <!--<select name="travel" id="travel">-->
+                                <!--<option value="1">Включен</option>-->
+                                <!--<option value="2">Отключен</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="excursion-right">-->
+                    <!--<div class="excursion-right_whence">-->
+                        <!--<p>Откуда</p>-->
+                        <!--<form autocomplete="off" action="/action_page.php">-->
+                            <!--<div class="autocomplete">-->
+                                <!--<input id="myInput1" type="text" name="myCountry" placeholder="City">-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; <input type="submit"> &ndash;&gt;-->
+                        <!--</form>-->
+                    <!--</div>-->
+                    <!--<button type="button" class="excursion-right_btn">Поиск</button>-->
+                <!--</div>-->
+            <!--</section>-->
+        <!--</div>-->
+
     </div>
 
+    <script src="js/jquery.datepicker.extention.range.min.js"></script>
 <script src="js/main.js"></script>
+    <script  type="text/javascript">
+        window.onload  = changeCss1;
+    </script>
 </body>
 </html>
