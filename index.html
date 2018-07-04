@@ -6,36 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <!--<link rel="stylesheet" href="css/font-awesome.css">-->
-    <!--<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" id='stylesheet' href="dist/style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-3.3.1.js"></script>
-    
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
 </head>
 <body>
-    <!-- <div class="main">
-        <div class="container">
-            <div class="menu">
-                <ul class="menu-block menu_left">
-                    <li class="menu_left-item">пакетные туры</li>
-                    <li class="menu_left-item">экскурсионные туры</li>
-                    <li class="menu_left-item">билеты</li>
-                    <li class="menu_left-item">отели</li>
-                </ul>
-                <ul class="menu-block menu_right">
-                    <li class="menu_left-item"><i class="fas fa-heart"></i>избранные туры</li>
-                    <li class="menu_left-item">вход</li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
-
     <div class="main">
-        <div class="container" id="container">
+        <div class="container" id="container" style="max-width: 1400px">
             <header class="header">
                 <nav class="nav">
                     <div class="nav-mobile"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -74,8 +53,11 @@
                     </div>
                     <div class="wrap-range">
                         <div class="excursion-left_range">
-                            <p>Даты</p>
-                            <input id="date_range" readonly>
+                            <p>Даты тура</p>
+                                <div class="wrap-data">
+                                    <input type="text" id="from" name="from" placeholder="From">
+                                    <input type="text" id="to" name="to" placeholder="To">
+                                </div>
                         </div>
                         <div class="excursion-left_travel">
                             <p>Проезд</p>
@@ -140,8 +122,11 @@
                     </div>
                     <div class="wrap-range">
                         <div class="excursion-left_range">
-                            <p>Даты</p>
-                            <input id="date_range1" readonly>
+                            <p>Даты тура</p>
+                            <div class="wrap-data">
+                                <input type="text" id="from" name="from" placeholder="From">
+                                <input type="text" id="to" name="to" placeholder="To">
+                            </div>
                         </div>
                         <div class="excursion-left_travel">
                             <p>Проезд</p>
@@ -166,11 +151,12 @@
                 </div>
             </section>
         </div>
-
     </div>
 
-    <script src="js/jquery.datepicker.extention.range.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script  type="text/javascript">
         window.onload  = changeCss1;
     </script>
