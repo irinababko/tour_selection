@@ -67,6 +67,7 @@ body {
 
 .container {
   width: 80%;
+  max-width: 500px;
   margin: 10px auto;
 }
 
@@ -301,87 +302,74 @@ header .nav ul li .nav_item-down ul li:hover a {
   text-transform: uppercase;
 }
 
-.container-1 {
-  max-width: 1024px;
-  background: black;
+.container {
+  max-width: 500px;
 }
 
-.header-1 {
-  background: black;
+.container header {
+  position: relative;
 }
 
-@media screen and (max-width: 1024px) {
-  .container header {
-    position: relative;
-  }
-  .container header .nav-mobile {
-    display: block;
-    padding: 20px 50px;
-    font-size: 26px;
-    z-index: 500;
-  }
-  .container header .nav-mobile a {
-    color: white;
-  }
-  .container header .nav-left {
-    flex-flow: column;
-    background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
-    position: absolute;
-    top: 70px;
-    left: 0px;
-    width: 75%;
-    z-index: 100;
-  }
-  .container header .nav ul.nav-left {
-    display: none;
-    transition: .5s;
-  }
-  .container header .nav ul.nav-left li {
-    width: 100%;
-    text-align: center;
-  }
-  .container header .nav ul.nav-left li a {
-    padding: 25px 15px;
-  }
-  .container header .nav ul.nav-right li {
-    line-height: 46px;
-  }
-  .container header .nav ul.nav-right .nav_item-mylist p {
-    display: none;
-  }
-  .container header .nav ul.nav-right .nav_item-mylist i {
-    font-size: 24px;
-    margin-right: 0;
-  }
-  .container header .nav_item-mylist p {
-    display: none;
-  }
-  .container .excursion {
-    flex-flow: column;
-  }
-  .container .excursion-left {
-    width: 100%;
-  }
-  .container .excursion-right {
-    width: 100%;
-  }
+.container header .nav-mobile {
+  display: block;
+  padding: 20px 50px;
+  font-size: 26px;
+  z-index: 500;
 }
 
-.ui-datepicker .selected-start:not(.selected-end) a,
-.ui-datepicker .selected-end:not(.selected-start) a {
-  background: #F3FDD5;
+.container header .nav-mobile a {
+  color: white;
 }
 
-.ui-datepicker .selected.first-of-month:not(.selected-start) a {
-  border-left: 2px dotted #D4E7F6;
-  padding-left: 1px;
+.container header .nav-left {
+  flex-flow: column;
+  background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  width: 75%;
+  z-index: 100;
 }
 
-.ui-datepicker .selected.last-of-month:not(.selected-end) a {
-  border-right: 2px dotted #D4E7F6;
-  padding-right: 1px;
+.container header .nav ul.nav-left {
+  display: none;
+  transition: .5s;
 }
 
-#date_range_multiple {
-  width: 350px;
+.container header .nav ul.nav-left li {
+  width: 100%;
+  text-align: center;
+}
+
+.container header .nav ul.nav-left li a {
+  padding: 25px 15px;
+}
+
+.container header .nav ul.nav-right li {
+  line-height: 46px;
+}
+
+.container header .nav ul.nav-right .nav_item-mylist p {
+  display: none;
+}
+
+.container header .nav ul.nav-right .nav_item-mylist i {
+  font-size: 24px;
+  margin-right: 0;
+}
+
+.container header .nav_item-mylist p {
+  display: none;
+}
+
+.container .excursion {
+  flex-flow: column;
+}
+
+.container .excursion-left {
+  width: 100%;
+}
+
+.container .excursion-right {
+  width: 100%;
 }
