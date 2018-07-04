@@ -102,20 +102,58 @@ var cities = ["Kyiv", "Lviv", "Odessa"]
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), countries);
 autocomplete(document.getElementById("myInput1"), cities);
+autocomplete(document.getElementById("myInput2"), countries);
+autocomplete(document.getElementById("myInput3"), cities);
 
+$(function(){
+  $("#datepicker").datepicker();
+});
+$(function() {
+  var dates = $( "#from, #to" ).datepicker({
+  onSelect: function( selectedDate ) {
+  var option = this.id == "from" ? "minDate" : "maxDate",
+  instance = $( this ).data( "datepicker" ),
+  date = $.datepicker.parseDate(
+  instance.settings.dateFormat ||
+  $.datepicker._defaults.dateFormat,
+  selectedDate, instance.settings );
+  dates.not( this ).datepicker( "option", option, date );
+  }
+  });
+  });
 
+  $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#from" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 3
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 3
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
 
-// $(function() {
-//     $('#date_range').datepicker({
-//         range: 'period', // режим - выбор периода
-//         numberOfMonths: 2,
-//         onSelect: function(dateText, inst, extensionRange) {
-//             // extensionRange - объект расширения
-//             $('#date_range').val(extensionRange.startDateText + ' - ' + extensionRange.endDateText);
-//         }
-//     });
-//
-// });
 
 function myFunction() {
     var x = document.getElementById("myLinks");
@@ -134,72 +172,20 @@ function myFunction1() {
         x.style.display = "block";
     }
 }
-// function myFunction() {
-//     var x = document.getElementById("myLinks");
-//     if (x.style.top === "70px") {
-//         x.style.top = "-100px";
-//     } else {
-//         x.style.top = "70px";
-//     }
-// }
-// function myFunction() {
-//     var x = document.getElementById("myLinks");
-//     if ((x.style.top === "70px") && (x.style.visibility === "visible")) {
-//         x.style.top = "-100px";
-//         x.style.visibility = "hidden";
-//     } else {
-//         x.style.top = "70px";
-//         x.style.visibility = "visible";
-//     }
-// }
 
-// function  changeCss() {
-//     var w =  screen.width;
-//     var h =  screen.height;
-//     if (w <=  '1024' && h <= '768')
-//     {
-//         document.getElementById("stylesheet").href="css/style_1024х768.css";
-//     }
-//     else
-//     {
-//         if (w === '1152' && h ===  '864')
-//         {
-//             document.getElementById("stylesheet").href="css/style_1152х864.css";
-//         }
-//         else
-//         {
-//             if (w === '1280'  && h === '800')
-//             {
-//                 document.getElementById("stylesheet").href="css/style_1280х800.css";
-//             }
-//             else
-//             {
-//                 if (w >= '1280' && h >=  '1024')
-//                 {
-//                     document.getElementById("stylesheet").href="css/style_1024х1024.css";
-//                 }
-//             };
-//         };
-//     };
-// };
+
 
 function changeCss1() {
-    // var w = document.getElementById('container').style.maxWidth;
-    var w =  screen.width;
-    if (w >= '1024px')
+    var w = document.getElementById('container').style.maxWidth;
+    //var w =  screen.width;
+    if (w <= '1024px')
     {
-        document.getElementById("stylesheet").href="dist/style.css";
+        document.getElementById("stylesheet").href="dist/style1.css";
     } else {
             document.getElementById("stylesheet").href="dist/style.css";
     };
+
 }
 
-// function changeCss1() {
-//     // var w = document.getElementById('container').style.maxWidth;
-//     var w =  screen.width;
-//     if (w >= '1024px')
-//     {
-//         document.getElementsByClassName('header').addClass('header-1');
-//     }
-// }
+
 
