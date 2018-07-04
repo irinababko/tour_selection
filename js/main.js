@@ -102,3 +102,104 @@ var cities = ["Kyiv", "Lviv", "Odessa"]
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), countries);
 autocomplete(document.getElementById("myInput1"), cities);
+
+
+
+// $(function() {
+//     $('#date_range').datepicker({
+//         range: 'period', // режим - выбор периода
+//         numberOfMonths: 2,
+//         onSelect: function(dateText, inst, extensionRange) {
+//             // extensionRange - объект расширения
+//             $('#date_range').val(extensionRange.startDateText + ' - ' + extensionRange.endDateText);
+//         }
+//     });
+//
+// });
+
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
+function myFunction1() {
+    var x = document.getElementById("myLinks1");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+// function myFunction() {
+//     var x = document.getElementById("myLinks");
+//     if (x.style.top === "70px") {
+//         x.style.top = "-100px";
+//     } else {
+//         x.style.top = "70px";
+//     }
+// }
+// function myFunction() {
+//     var x = document.getElementById("myLinks");
+//     if ((x.style.top === "70px") && (x.style.visibility === "visible")) {
+//         x.style.top = "-100px";
+//         x.style.visibility = "hidden";
+//     } else {
+//         x.style.top = "70px";
+//         x.style.visibility = "visible";
+//     }
+// }
+
+// function  changeCss() {
+//     var w =  screen.width;
+//     var h =  screen.height;
+//     if (w <=  '1024' && h <= '768')
+//     {
+//         document.getElementById("stylesheet").href="css/style_1024х768.css";
+//     }
+//     else
+//     {
+//         if (w === '1152' && h ===  '864')
+//         {
+//             document.getElementById("stylesheet").href="css/style_1152х864.css";
+//         }
+//         else
+//         {
+//             if (w === '1280'  && h === '800')
+//             {
+//                 document.getElementById("stylesheet").href="css/style_1280х800.css";
+//             }
+//             else
+//             {
+//                 if (w >= '1280' && h >=  '1024')
+//                 {
+//                     document.getElementById("stylesheet").href="css/style_1024х1024.css";
+//                 }
+//             };
+//         };
+//     };
+// };
+
+function changeCss1() {
+    // var w = document.getElementById('container').style.maxWidth;
+    var w =  screen.width;
+    if (w >= '1024px')
+    {
+        document.getElementById("stylesheet").href="dist/style.css";
+    } else {
+            document.getElementById("stylesheet").href="dist/style.css";
+    };
+}
+
+// function changeCss1() {
+//     // var w = document.getElementById('container').style.maxWidth;
+//     var w =  screen.width;
+//     if (w >= '1024px')
+//     {
+//         document.getElementsByClassName('header').addClass('header-1');
+//     }
+// }
+
