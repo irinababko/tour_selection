@@ -1,98 +1,36 @@
-body * {
-    box-sizing: border-box;
-    // font-family: 'Roboto Mono', monospace;
-    font-family: 'Montserrat', sans-serif;
-}
-li {
-    list-style-type: none;
-}
-ul {
-    margin: 0;
-    padding: 0;
-}
+@import 'variables';
 
-// .menu {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     text-transform: uppercase;
-//     border: 1px solid #666;
-//     background-color: lightblue;
-//     color: #fff;
-//     cursor: pointer;
-
-//     &-block{
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         padding: 10px;
-//     }
-
-//     &_left {
-//         width: 60%;
-//         border: none;
-        
-//         li {
-//             &:hover{
-//                 background-color: lightgray;
-//             }
-//         }
-//         &-item{
-//             i {
-//                 margin-right: 5px;
-//             }
-//         }
-//     }
-//     &_right {
-//         width: 25%;
-//         border: none;
-//     }
-// }
-  
 * {margin: 0;padding: 0;outline: none;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 *:after, *:before { -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {  display: block;}
 html {font-size: 100%;height: auto !important;height: 100%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;}
 .clear {display: block;	}
 .clear::after {clear: both;content: ".";display: block;height: 1px;visibility: hidden;}
-	
-/*GENERIC STYLES*/
-body { 
+
+body {
+    font-family: $font-main;
     background: #f2f2f2;
     color: #222;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     height: auto !important;
-    height: 100%;
     line-height: 14px;
-    min-height: 100%;
 }
-// .container {
 
-// }
-//.container-1{
-//    max-width: 320px;
-//}
 /*NAV*/
 .container {
-    width: 80%;
-    //min-width: 50%;
-    //max-width: 100%;
-    //width: calc(~"500 * 500px - 50000%");
-    max-width: 1300px;
-    margin: 10px auto;
+    //width: 80%;
+    max-width: 1400px;
+    margin: 0px auto;
 
     header {
-        background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
+        background: $bg-main;
         border-bottom: 1px solid rgba(0, 0, 0, .1);
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
         display: block;
-        // position: fixed;
         width: 100%;
-        // z-index: 1000;
         text-align: center;
+        margin-top: 50px;
 
         .nav {
             display: flex;
@@ -117,7 +55,7 @@ body {
                     position: relative;
                     transition: all linear 0.1s;
                     &.active {
-                        background: rgba(58, 162, 173, 1);
+                        background: $bg-main-hvr;
                     }
                     a {
                         display: flex;
@@ -132,21 +70,14 @@ body {
                         text-transform: uppercase;
                         text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
                         transition: all linear 0.1s;
-
                     }
                     &:hover {
-                        background: rgba(58, 162, 173, 1);
+                        background: $bg-main-hvr;
                     }
                     &:hover a + .nav_item-down {
                         display: block;
-
-                        // li{
-                        //     display: flex;
-                        //     flex-flow: column;
-                        // }
                     }
                     .nav_item {
-
                         ul {
                             li {
                                 &:hover a {
@@ -163,11 +94,10 @@ body {
                             margin-right: 5px;
                         }
                         &-down {
-                            background: linear-gradient(to bottom, rgba(58, 162, 173, 1) 0, rgba(62, 188, 207, 0.96) 100%);
+                            background: $bg-main;
                             border-radius: 0 0 2px 2px;
                             box-shadow: 0 3px 1px rgba(0, 0, 0, .05);
                             display: none;
-                            //font-size: 1;
                             position: absolute;
                             width: 195px;
                             ul {
@@ -198,7 +128,6 @@ body {
             }
         }
     }
-
     .excursion {
         background-color: lightgray;
         height: auto;
@@ -206,7 +135,6 @@ body {
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 20px 20px 35px 20px;
-
         input, select {
             border: 1px solid transparent;
             background-color: #f1f1f1;
@@ -218,11 +146,6 @@ body {
         input[type=text] {
             background-color: #f1f1f1;
             // width: 100%;
-        }
-        input[type=submit] {
-            background-color: DodgerBlue;
-            color: #fff;
-            cursor: pointer;
         }
         select {
             padding: 8.5px 10px;
@@ -241,14 +164,14 @@ body {
             }
             &_range {
                 display: block;
-                width: 40%;
+                width: 45%;
                 .wrap-data{
                     display: flex;
                 }
             }
             &_travel {
                 display: block;
-                width: 40%;
+                width: 45%;
             }
             .wrap-range {
                 display: flex;
@@ -274,14 +197,14 @@ body {
                 margin: 53px 0px 0 0px;
                 color: white;
                 text-transform: uppercase;
-                background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
+                background: $bg-main;
                 border: none;
                 border-bottom: 1px solid rgba(0, 0, 0, .1);
                 box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
                 cursor: pointer;
                 //transition: .5s;
                 &:hover {
-                    background: rgba(58, 162, 173, 1);
+                    background: $bg-main-hvr;
                 }
             }
             .more{
@@ -301,7 +224,6 @@ body {
                 }
             }
         }
-
         .autocomplete {
             position: relative;
             display: inline-block;
@@ -332,190 +254,24 @@ body {
         }
     }
 }
-    .container {
-        &.container-1 {
-            max-width: 320px;
-            header {
-                position: relative;
-                .nav {
-                    &-mobile {
-                        display: block;
-                        padding: 20px 50px;
-                        font-size: 26px;
-                        // z-index: 500;
-                        a {
-                            color: white;
-                        }
-                    }
-                    &-left {
-                        flex-flow: column;
-                        background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
-                        position: absolute;
-                        top: 70px;
-                        left: 0px;
-                        width: 100%;
-                        z-index: 100;
-                    }
-                    ul.nav-left {
-                        display: none;
-                        //visibility: hidden;
-                        //top: -100px;
-                        transition: .5s;
-                        li {
-                            width: 100%;
-                            text-align: center;
-                            a {
-                                padding: 25px 15px;
-                            }
-                        }
-                    }
-                    ul.nav-right {
-                        li {
-                            line-height: 46px;
-                        }
-                        .nav_item-mylist {
-                            p {
-                                display: none;
-                            }
-                            i {
-                                font-size: 24px;
-                                margin-right: 0;
-                            }
-                        }
-                    }
-                    &_item {
-                        &-mylist {
-                            p {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-            }
-            .excursion {
-                &.excursion-1{
-                    flex-flow: column;
-                    .excursion-left {
-                        width: 100%;
-                        margin-bottom: 0;
-                    }
-                    .excursion-right {
-                        width: 100%;
-                    }
-                    .excursion-left_range{
-                        width: 45%;
-                    }
-                    .excursion-left_travel{
-                        width: 45%;
-                    }
-                }
-            }
-        }
-    }
 .ui-datepicker{
     width: 14em !important;
 }
 
-        @media screen and (max-width: 1024px) {
-            .container {
-                //max-width: 1024px;
-                width: 100%;
-                header {
-                    position: relative;
-                    .nav {
-                        &-mobile {
-                            display: block;
-                            padding: 20px 50px;
-                            font-size: 26px;
-                            z-index: 500;
-                            a {
-                                color: white;
-                            }
-                        }
-                        &-left {
-                            flex-flow: column;
-                            background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
-                            position: absolute;
-                            top: 70px;
-                            left: 0px;
-                            width: 100%;
-                            z-index: 100;
-                        }
-                        ul.nav-left {
-                            display: none;
-                            //visibility: hidden;
-                            //top: -100px;
-                            transition: .5s;
-                            li {
-                                width: 100%;
-                                text-align: center;
-                                a {
-                                    padding: 25px 15px;
-                                }
-                            }
-                        }
-                        ul.nav-right {
-                            li {
-                                line-height: 46px;
-                            }
-                            .nav_item-mylist {
-                                p {
-                                    display: none;
-                                }
-                                i {
-                                    font-size: 24px;
-                                    margin-right: 0;
-                                }
-                            }
-                        }
-                        &_item {
-                            &-mylist {
-                                p {
-                                    display: none;
-                                }
-                            }
-                        }
-                    }
-                }
-                .excursion {
-                    flex-flow: column;
-                    &-left {
-                        width: 100%;
-                        margin-bottom: 0;
-                        &_range{
-                            width: 45%;
-                        }
-                        &_travel{
-                            width: 45%;
-                        }
-                    }
-                    &-right {
-                        width: 100%;
-                    }
-                    input {
-                        font-size: 14px;
-                    }
-
-                }
-            }
-        }
-
-
-/*the container must be positioned relative:*/
+/*SELECT*/
 .custom-select {
     position: relative;
 }
 .custom-select select {
-    display: none; /*hide original SELECT element:*/
+    display: none;
 }
 .select-selected {
-    background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
+    background: $bg-main;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
     margin-top: 20px;
 }
-/*style the arrow inside the select element:*/
 .select-selected:after {
     position: absolute;
     content: "";
@@ -526,12 +282,10 @@ body {
     border: 6px solid transparent;
     border-color: #fff transparent transparent transparent;
 }
-/*point the arrow upwards when the select box is open (active):*/
 .select-selected.select-arrow-active:after {
     border-color: transparent transparent #fff transparent;
     top: 7px;
 }
-/*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
     color: #ffffff;
     padding: 12px 16px;
@@ -539,19 +293,87 @@ body {
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
 }
-/*style items (options):*/
 .select-items {
     position: absolute;
-    background: linear-gradient(to left, rgba(54, 194, 182, 0.96) 0, rgba(62, 188, 207, 0.96) 100%);
+    background: $bg-main;
     top: 100%;
     left: 0;
     right: 0;
     z-index: 99;
 }
-/*hide the items when the select box is closed:*/
 .select-hide {
     display: none;
 }
 .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*css-queries*/
+.wrap[max-width~="1024px"] .header{
+    position: relative;
+    margin-top: 0;
+    .nav {
+        &-mobile {
+            display: block;
+            padding: 20px 50px;
+            font-size: 26px;
+            z-index: 500;
+            a {
+                color: white;
+            }
+        }
+        &-left {
+            flex-flow: column;
+            background: $bg-main;
+            position: absolute;
+            top: 70px;
+            left: 0px;
+            width: 75%;
+            z-index: 100;
+        }
+        ul.nav-left {
+            display: none;
+            //visibility: hidden;
+            //top: -100px;
+            transition: .5s;
+            li {
+                width: 100%;
+                text-align: center;
+                a {
+                    padding: 25px 15px;
+                }
+            }
+        }
+        ul.nav-right {
+            li {
+                line-height: 46px;
+            }
+            .nav_item-mylist {
+                p {
+                    display: none;
+                }
+                i {
+                    font-size: 24px;
+                    margin-right: 0;
+                }
+            }
+        }
+        &_item {
+            &-mylist {
+                p {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.wrap[max-width~="1024px"] .excursion{
+    flex-flow: column;
+    &-left {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    &-right {
+        width: 100%;
+    }
 }
