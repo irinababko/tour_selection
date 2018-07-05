@@ -11,16 +11,20 @@
     <link rel="stylesheet" id='stylesheet' href="dist/style.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <script src="src/ResizeSensor.js"></script>
+    <script src="src/ElementQueries.js"></script>
+
 </head>
 <body>
     <div class="main">
         <div class="container" id="container" style="max-width: 1400px">
+            <div class="wrap">
             <header class="header">
                 <nav class="nav">
-                    <div class="nav-mobile"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <div class="nav-mobile"><a href="javascript:void(0);" class="icon" onclick="openFunction()">
                         <i class="fa fa-bars"></i>
                     </a></div>
-                    <ul class="nav-left" id="myLinks">
+                    <ul class="nav-left" id="nav-left">
                         <li><a href="#"><div class="nav_item">пакетные туры</div></a></li>
                         <li class="active"><a href="#"><div class="nav_item">экскурсионные туры</div></a></li>
                         <li><a href="#"><div class="nav_item">билеты</div></a></li>
@@ -46,9 +50,8 @@
                         <p>Куда</p>
                         <form autocomplete="off" action="/action_page.php">
                             <div class="autocomplete">
-                                <input id="myInput" type="text" name="myCountry" placeholder="Country">
+                                <input id="country" type="text" name="myCountry" placeholder="Country">
                             </div>
-                            <!-- <input type="submit"> -->
                         </form>
                     </div>
                     <div class="wrap-range">
@@ -61,10 +64,6 @@
                         </div>
                         <div class="excursion-left_travel">
                             <p>Проезд</p>
-                            <!--<select name="travel" id="travel">-->
-                                <!--<option value="1">Включен</option>-->
-                                <!--<option value="2">Отключен</option>-->
-                            <!--</select>-->
                             <div class="custom-select">
                                 <select>
                                     <option value="0">-Select-</option>
@@ -80,9 +79,8 @@
                         <p>Откуда</p>
                         <form autocomplete="off" action="/action_page.php">
                             <div class="autocomplete">
-                                <input id="myInput1" type="text" name="myCountry" placeholder="City">
+                                <input id="city" type="text" name="myCountry" placeholder="City">
                             </div>
-                            <!-- <input type="submit"> -->
                         </form>
                     </div>
                     <button type="button" class="excursion-right_btn">Поиск</button>
@@ -90,91 +88,14 @@
                 </div>
             </section>
         </div>
-
-        <div class="container container-1">
-            <header>
-                <nav class="nav">
-                    <div class="nav-mobile"><a href="javascript:void(0);" class="icon" onclick="myFunction1()">
-                        <i class="fa fa-bars"></i>
-                    </a></div>
-                    <ul class="nav-left" id="myLinks1">
-                        <li><a href="#"><div class="nav_item">пакетные туры</div></a></li>
-                        <li class="active"><a href="#"><div class="nav_item">экскурсионные туры</div></a></li>
-                        <li><a href="#"><div class="nav_item">билеты</div></a></li>
-                        <li><a href="#"><div class="nav_item">отели</div></a>
-                            <!-- <div class="nav_item-down">
-                                <ul>
-                                    <li><a href="#">3 ***</a></li>
-                                    <li><a href="#">4 ****</a></li>
-                                    <li><a href="#">5 *****</a></li>
-                                    <li><a href="#">без звезд</a></li>
-                            </div> -->
-                        </li>
-                    </ul>
-                    <ul class="nav-right">
-                        <li><a href="#"><div class="nav_item nav_item-mylist"><i class="fas fa-heart"></i><p>избранные туры</p></div></a></li>
-                        <li><a href="#"><div class="nav_item nav_item-mylist"><i class="fas fa-sign-in-alt"></i><p>вход</p></div></a></li>
-                    </ul>
-                </nav>
-            </header>
-            <section class="excursion excursion-1">
-                <div class="excursion-left">
-                    <div class="excursion-left_where">
-                        <p>Куда</p>
-                        <form autocomplete="off" action="/action_page.php">
-                            <div class="autocomplete">
-                                <input id="myInput2" type="text" name="myCountry" placeholder="Country">
-                            </div>
-                            <!-- <input type="submit"> -->
-                        </form>
-                    </div>
-                    <div class="wrap-range">
-                        <div class="excursion-left_range">
-                            <p>Даты тура</p>
-                            <div class="wrap-data">
-                                <input type="text" id="from" name="from" placeholder="From">
-                                <input type="text" id="to" name="to" placeholder="To">
-                            </div>
-                        </div>
-                        <div class="excursion-left_travel">
-                            <p>Проезд</p>
-                            <!--<select name="travel" id="travel1">-->
-                                <!--<option value="1">Включен</option>-->
-                                <!--<option value="2">Отключен</option>-->
-                            <!--</select>-->
-                            <div class="custom-select">
-                                <select>
-                                    <option value="0">-Select-</option>
-                                    <option value="1">Включен</option>
-                                    <option value="2">Отключен</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="excursion-right">
-                    <div class="excursion-right_whence">
-                        <p>Откуда</p>
-                        <form autocomplete="off" action="/action_page.php">
-                            <div class="autocomplete">
-                                <input id="myInput3" type="text" name="myCountry" placeholder="City">
-                            </div>
-                            <!-- <input type="submit"> -->
-                        </form>
-                    </div>
-                    <button type="button" class="excursion-right_btn">Поиск</button>
-                    <div class="more"><p>Больше параметров поиска</p><i class="fas fa-sort-down"></i></div>
-                </div>
-            </section>
         </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script  type="text/javascript">
-        window.onload  = changeCss1;
-    </script>
+
 </body>
 </html>
