@@ -198,6 +198,6 @@ document.addEventListener("click", closeAllSelect);
 
 // CSS-queries
 // npm install css-element-queries --save
-var ElementQueries = require('src/ElementQueries');
+var ElementQueries = require('src/ElementQueries.js');
 ElementQueries.listen();
 ElementQueries.init();
